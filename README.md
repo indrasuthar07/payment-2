@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Payment System
 
 A full-stack payment system built with React frontend and Node.js backend, featuring user authentication, transaction management, and QR code generation.
@@ -218,3 +219,6 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 For support, please open an issue on GitHub or contact the development team.
+=======
+# payment-2
+>>>>>>> 9fd6edf92f963a83f8fd3b31c8456146c2e26378
