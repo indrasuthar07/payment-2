@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: payment-system-frontend
+    env: static
+    plan: free
+    buildCommand: |
+      echo "Installing root dependencies..."
+      npm install
+      echo "Installing frontend dependencies..."
+      cd frontend
+      npm install
+      echo "Building frontend..."
+      npm run build
+      echo "Build completed. Checking build directory..."
+      ls -la
+      echo "Build directory contents:"
+      ls -la build/
+      cd ..
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://payment-system-backend.onrender.com 

@@ -1,0 +1,38 @@
+{
+  "name": "payment-system",
+  "version": "1.0.0",
+  "description": "Full-stack payment system with React frontend and Node.js backend",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "build-frontend": "cd frontend && npm install && npm run build",
+    "start": "node server.js",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "heroku-postbuild": "cd frontend && npm install && npm run build",
+    "render-postbuild": "npm run install-all"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^7.0.6"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": ["payment", "react", "nodejs", "mongodb", "express"],
+  "author": "",
+  "license": "MIT"
+}

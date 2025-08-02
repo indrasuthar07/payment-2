@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: payment-system-frontend
+    env: static
+    plan: free
+    buildCommand: |
+      npm install
+      cd frontend && npm install
+      cd frontend && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://payment-system-backend.onrender.com 

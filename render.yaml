@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: payment-system-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: FRONTEND_URL
+        value: https://payment-system-frontend.onrender.com
+
+  - type: web
+    name: payment-system-frontend
+    env: static
+    plan: free
+    buildCommand: |
+      npm install
+      cd frontend
+      npm install
+      npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://payment-system-backend.onrender.com 

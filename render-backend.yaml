@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: payment-system-backend
+    env: node
+    plan: free
+    buildCommand: |
+      npm install
+      cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: FRONTEND_URL
+        value: https://payment-system-frontend.onrender.com 
