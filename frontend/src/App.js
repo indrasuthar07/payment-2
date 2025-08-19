@@ -1,4 +1,5 @@
 import './index.css';
+impoer react from {react};
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
